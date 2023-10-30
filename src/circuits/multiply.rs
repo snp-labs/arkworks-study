@@ -17,7 +17,11 @@ pub struct MultiplyCircuit<F: Field> {
 
 impl<F: Field> ConstraintSynthesizer<F> for MultiplyCircuit<F> {
     fn generate_constraints(self, cs: ConstraintSystemRef<F>) -> Result<(), SynthesisError> {
-        let c = cs.new_witness_variable(|| self.c.ok_or(SynthesisError::AssignmentMissing))?;
+        // input statements
+        // const
+        // witness
+
+        let c = cs.new_input_variable(|| self.c.ok_or(SynthesisError::AssignmentMissing))?;
         
         let a = cs.new_witness_variable(|| self.a.ok_or(SynthesisError::AssignmentMissing))?;
         let b = cs.new_witness_variable(|| self.b.ok_or(SynthesisError::AssignmentMissing))?;
@@ -45,7 +49,7 @@ pub mod test {
     #[test]
     fn test_mul() {
         let a: Fr = Fp::from_str("3").unwrap();
-        let b: Fr = Fp::from_str("2").unwrap();
+        let b: Fr = Fp::from_str("3").unwrap();
 
         let c: Fr = Fp::from_str("6").unwrap();
 

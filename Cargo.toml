@@ -8,7 +8,7 @@ edition = "2021"
 
 [dependencies]
 ark-bn254 = "0.4.0"
-ark-crypto-primitives = {version = "0.4.0", default-features = true, features = [ "r1cs", "encryption" ]}
+ark-crypto-primitives = {version = "0.4.0", default-features = true, features = [ "r1cs" ]}
 ark-ec = "0.4.2"
 ark-ed-on-bn254 = {version = "^0.4.0", features = [ "r1cs" ]}
 ark-ff = "0.4.2"

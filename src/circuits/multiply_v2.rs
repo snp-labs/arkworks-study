@@ -20,8 +20,8 @@ impl<F: PrimeField> ConstraintSynthesizer<F> for MultiplyCircuitV2<F> {
     fn generate_constraints(self, cs: ConstraintSystemRef<F>) -> Result<(), SynthesisError> {
         let c = FpVar::new_input(cs.clone(), || self.c.ok_or(SynthesisError::AssignmentMissing))?;
         
-        let a = FpVar::new_input(cs.clone(), || self.a.ok_or(SynthesisError::AssignmentMissing))?;
-        let b = FpVar::new_input(cs.clone(), || self.b.ok_or(SynthesisError::AssignmentMissing))?;
+        let a = FpVar::new_witness(cs.clone(), || self.a.ok_or(SynthesisError::AssignmentMissing))?;
+        let b = FpVar::new_witness(cs.clone(), || self.b.ok_or(SynthesisError::AssignmentMissing))?;
         
         c.enforce_equal(&(a*b))?;
 

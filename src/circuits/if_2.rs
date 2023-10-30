@@ -54,7 +54,7 @@ pub mod test {
     use crate::circuits::if_2::IfV2;
 
     #[test]
-    fn test_mul() {
+    fn test_mul_2() {
         let age: Fr = Fp::from_str("19").unwrap();
         let a: Fr = Fp::from_str("3").unwrap();
         let b: Fr = Fp::from_str("3").unwrap();

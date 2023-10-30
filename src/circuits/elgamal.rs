@@ -11,8 +11,6 @@ use ark_relations::r1cs::SynthesisError;
 
 use crate::gadgets::public_encryptions::constraints::AsymmetricEncryptionGadget;
 use crate::gadgets::public_encryptions::elgamal;
-
-// is age greater than 19?
 #[derive(Clone)]
 pub struct ElgamalCircuit<C: CurveGroup, GG: CurveVar<C, C::BaseField>> {
     // Constants
